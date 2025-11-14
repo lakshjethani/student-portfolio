@@ -1,0 +1,370 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   Design Tokens: Light Theme
+   ========================= */
+:root { --foreground-muted: 45 55 72; } /* slightly darker */
+
+:root {
+  /* Primary Brand (Indigo) */
+  --primary: 79 70 229; /* #4F46E5 */
+  --primary-foreground: 255 255 255;
+  --primary-hover: 99 102 241; /* #6366F1 */
+  
+  /* Secondary Accent (Emerald) */
+  --accent: 34 211 238;      /* cyan-400 */
+  --accent-foreground: 15 23 42;
+  --accent-hover: 6 182 212; /* cyan-500 */
+  
+  /* Background & Surface */
+  --bg: 255 255 255;
+  --surface: 249 250 251; /* #F9FAFB */
+  --muted: 243 244 246; /* #F3F4F6 */
+  --overlay: 0 0 0 / 0.4;
+  
+  /* Foreground */
+  --foreground: 15 23 42; /* #0F172A */
+  --foreground-muted: 51 65 85; /* #334155 */
+  --foreground-subtle: 100 116 139; /* #64748B */
+  
+  /* Borders & Dividers */
+  --border: 226 232 240; /* #E2E8F0 */
+  --border-muted: 241 245 249; /* #F1F5F9 */
+  --ring: 56 189 248; /* sky-400 */
+  
+  /* Cards */
+  --card: 255 255 255;
+  --card-foreground: 15 23 42;
+  --card-border: 226 232 240;
+  
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 10px 0 rgb(0 0 0 / 0.06);
+  --shadow-md: 0 6px 20px 0 rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 10px 30px 0 rgb(0 0 0 / 0.12);
+  --shadow-xl: 0 20px 40px 0 rgb(0 0 0 / 0.15);
+  
+  /* Spacing Scale (8px base) */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+  --space-4xl: 5rem; /* 80px */
+  --space-5xl: 6rem; /* 96px */
+}
+
+/* =========================
+   Design Tokens: Dark Theme
+   ========================= */
+
+.dark {
+  /* Primary Brand (Indigo) */
+  --primary: 99 102 241; /* #6366F1 */
+  --primary-foreground: 255 255 255;
+  --primary-hover: 129 140 248; /* #818CF8 */
+  
+  /* Secondary Accent (Emerald) */
+  --accent: 103 232 249;     /* cyan-300 */
+  --accent-foreground: 15 23 42;
+  --accent-hover: 34 211 238; /* cyan-400 */
+  
+  /* Background & Surface */
+  --bg: 9 9 11; /* #09090B */
+  --surface: 24 24 27; /* #18181B */
+  --muted: 39 39 42; /* #27272A */
+  --overlay: 0 0 0 / 0.6;
+  
+  /* Foreground */
+  --foreground: 250 250 250; /* #FAFAFA */
+  --foreground-muted: 212 212 216; /* #D4D4D8 */
+  --foreground-subtle: 161 161 170; /* #A1A1AA */
+  
+  /* Borders & Dividers */
+  --border: 39 39 42; /* #27272A */
+  --border-muted: 63 63 70; /* #3F3F46 */
+  --ring: 125 211 252; /* sky-300 */
+
+  
+  /* Cards */
+  --card: 28 28 32;
+  --card-foreground: 250 250 250;
+  --card-border: 39 39 42;
+  
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow: 0 4px 10px 0 rgb(0 0 0 / 0.4);
+  --shadow-md: 0 6px 20px 0 rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 10px 30px 0 rgb(0 0 0 / 0.6);
+  --shadow-xl: 0 20px 40px 0 rgb(0 0 0 / 0.7);
+}
+
+/* =========================
+   Base Styles
+   ========================= */
+
+html {
+  scroll-behavior: smooth;
+  @apply antialiased;
+}
+
+body {
+  @apply bg-[rgb(var(--bg))] text-[rgb(var(--foreground))];
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+}
+
+/* =========================
+   Typography System
+   ========================= */
+
+.font-heading {
+  font-family: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+.font-body {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.type-display {
+  font-size: clamp(2.25rem, 6vw, 4.5rem); 
+
+  @apply font-heading text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1];
+}
+
+.type-h1 {
+  @apply font-heading text-4xl sm:text-5xl font-semibold tracking-tight leading-tight;
+}
+
+.type-h2 {
+  @apply font-heading text-3xl sm:text-4xl font-semibold tracking-tight leading-tight;
+}
+
+.type-h3 {
+  @apply font-heading text-2xl sm:text-3xl font-semibold tracking-tight;
+}
+
+.type-h4 {
+  @apply font-heading text-xl sm:text-2xl font-semibold;
+}
+
+.type-lead {
+  @apply text-lg sm:text-xl text-[rgb(var(--foreground-muted))] leading-relaxed;
+}
+
+.type-body {
+  @apply text-base leading-relaxed text-[rgb(var(--foreground))];
+}
+
+.type-caption {
+  @apply text-sm text-[rgb(var(--foreground-subtle))];
+}
+
+/* =========================
+   Selection
+   ========================= */
+
+::selection {
+  background-color: rgb(var(--primary) / 0.2);
+  color: rgb(var(--foreground));
+}
+
+.dark ::selection {
+  background-color: rgb(var(--primary) / 0.3);
+}
+
+/* =========================
+   Animated Background (Hero)
+   ========================= */
+
+.bg-animated-gradient {
+  background:
+  radial-gradient(60% 60% at 50% 0%, rgb(var(--primary) / 0.14), transparent 70%),
+  radial-gradient(45% 55% at 85% 20%, rgb(var(--accent) / 0.10), transparent 70%),
+  radial-gradient(40% 45% at 15% 15%, rgb(var(--primary-hover) / 0.08), transparent 60%);
+  background-size: 120% 120%;
+  animation: subtle-pan 22s ease-in-out infinite;
+  transition: filter 200ms ease;
+}
+
+.dark .bg-animated-gradient {
+  filter: saturate(1.05) brightness(0.95);
+}
+
+@keyframes subtle-pan {
+  0% { background-position: 0% 0%, 100% 0%, 0% 0%; }
+  50% { background-position: 100% 50%, 0% 50%, 100% 50%; }
+  100% { background-position: 0% 0%, 100% 0%, 0% 0%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-animated-gradient {
+    animation: none;
+    background-position: 50% 0%;
+  }
+}
+
+/* =========================
+   Cards, Inputs, Links, Buttons
+   ========================= */
+
+.card-elevate {
+  @apply rounded-xl border transition-all duration-300;
+  background-color: rgb(var(--card) / 0.8);
+  border-color: rgb(var(--card-border));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.card-elevate:hover {
+  @apply -translate-y-1;
+  box-shadow: var(--shadow-lg);
+  border-color: rgb(var(--border));
+}
+
+.input-elegant {
+  @apply w-full rounded-lg border px-4 py-2.5 text-sm transition-all duration-200;
+  background-color: rgb(var(--card));
+  border-color: rgb(var(--border));
+  color: rgb(var(--foreground));
+  placeholder-color: rgb(var(--foreground-subtle));
+}
+
+.input-elegant:focus {
+  @apply outline-none ring-2;
+  border-color: rgb(var(--ring));
+  --tw-ring-color: rgb(var(--ring) / 0.35);
+   --tw-ring-offset-color: rgb(var(--bg));
+   box-shadow: 0 0 0 3px rgb(var(--ring) / 0.12);
+}
+
+.link-underline {
+  @apply relative;
+}
+
+.link-underline::after {
+  content: "";
+  @apply absolute left-0 right-0 bottom-0 h-px origin-left;
+  background: linear-gradient(90deg, transparent 0%, rgb(var(--primary)) 50%, transparent 100%);
+  transform: scaleX(0);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-200;
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--primary-hover)));
+  color: rgb(var(--primary-foreground));
+  box-shadow: 0 2px 10px 0 rgb(var(--primary) / 0.18);
+}
+
+.btn-primary:hover {
+  @apply -translate-y-0.5 scale-[1.02];
+  box-shadow: 0 6px 18px 0 rgb(var(--primary) / 0.25);
+}
+
+.btn-primary:active {
+  @apply scale-[0.98];
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-lg border px-6 py-3 text-sm font-semibold transition-all duration-200;
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  background-color: rgb(var(--card));
+  border-color: rgb(var(--border));
+  color: rgb(var(--foreground));
+}
+
+.btn-secondary:hover {
+  @apply -translate-y-0.5;
+  background-color: rgb(var(--surface));
+  border-color: rgb(var(--accent) / 0.6);
+}
+
+/* =========================
+   Section + Container
+   ========================= */
+
+.section {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
+.section-narrow {
+  @apply mx-auto max-w-4xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-wide {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-surface {
+  background-color: rgb(var(--surface) / 0.5);
+}
+
+/* =========================
+   Scrollbar (subtle)
+   ========================= */
+
+*::-webkit-scrollbar {
+  @apply h-2 w-2;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply rounded-full;
+  background-color: rgb(var(--foreground-subtle) / 0.2);
+  border: 2px solid transparent;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(var(--foreground-subtle) / 0.3);
+}
+
+/* =========================
+   Focus Styles (Accessibility)
+   ========================= */
+
+*:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  --tw-ring-color: rgb(var(--ring));
+  --tw-ring-offset-color: rgb(var(--bg));
+}
+
+/* =========================
+   Smooth Transitions
+   ========================= */
+
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* =========================
+   Reduced Motion Support
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
