@@ -298,6 +298,8 @@ body {
 
 .section {
   @apply py-16 sm:py-20 lg:py-24;
+  /* Ensure in-page anchors don't sit under the sticky navbar */
+  scroll-margin-top: 72px;
 }
 
 .section-narrow {
@@ -310,6 +312,16 @@ body {
 
 .section-surface {
   background-color: rgb(var(--surface) / 0.5);
+}
+
+/* Progressive rendering: skip offscreen until needed */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 600px 800px;
+}
+
+@media (min-width: 768px) {
+  .section { scroll-margin-top: 88px; }
 }
 
 /* =========================

@@ -95,6 +95,14 @@ export default function Hero() {
           <a href="#projects" className="btn-primary" aria-label="View my projects">
             View Projects
           </a>
+          <a
+            href="/resume/LakshJethani(Resume).pdf"
+            download="Laksh_Jethani_Resume.pdf"
+            className="btn-secondary"
+            aria-label="Download my resume as PDF"
+          >
+            Resume
+          </a>
           <a href="#contact" className="btn-secondary" aria-label="Contact me">
             Contact Me
           </a>

@@ -10,7 +10,7 @@ export default function About() {
   const secondarySkills = skills.filter((s) => !FEATURED_SKILL_NAMES.includes(s.name))
 
   return (
-    <section id="about" className="section">
+    <section id="about" className="section cv-auto">
       <div className="section-narrow space-y-12">
         {/* Heading + intro */}
         <div className="mx-auto max-w-3xl space-y-4">
@@ -55,14 +55,13 @@ export default function About() {
           >
             <div className="flex justify-center lg:justify-start">
               <div className="relative">
-                <div className="relative h-64 w-64 overflow-hidden rounded-2xl ring-2 ring-border shadow-xl">
+                <div className="relative h-48 w-48 sm:h-64 sm:w-64 overflow-hidden rounded-2xl ring-2 ring-border shadow-xl">
                   <Image
                     src="/img/pp.jpeg"
                     alt="Profile picture"
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
-                    sizes="(max-width: 768px) 256px, 256px"
-                    priority
+                    sizes="(max-width: 640px) 192px, 256px"
                   />
                 </div>
                 <div

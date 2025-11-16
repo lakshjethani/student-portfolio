@@ -9,7 +9,7 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi'
 
 export default function Projects() {
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section cv-auto">
       <div className="section-wide">
         <motion.h2
           variants={fadeUp}
@@ -17,7 +17,7 @@ export default function Projects() {
           whileInView="visible"
           viewport={viewportConfig}
         >
-          <span className="type-h2">Projects</span>
+          <span className="type-h2">Projects & Contributions</span>
         </motion.h2>
 
         <motion.div
@@ -37,7 +37,7 @@ export default function Projects() {
               initial="rest"
               whileHover="hover"
             >
-              <div className="relative h-48 w-full overflow-hidden bg-surface">
+              <div className="relative h-40 sm:h-48 w-full overflow-hidden bg-surface">
                 <Image
                   src={project.image}
                   alt={`${project.title} project screenshot`}
@@ -62,6 +62,16 @@ export default function Projects() {
                         Code
                       </a>
                     )}
+                    {(!project.github || project.github === '#') && (
+                      <span
+                        title="Proprietary"
+                        aria-disabled="true"
+                        className="flex items-center gap-2 rounded-lg bg-card/60 px-4 py-2 text-sm font-medium text-foreground-muted shadow-lg backdrop-blur-sm border border-border/60 cursor-not-allowed"
+                      >
+                        <FiGithub className="h-4 w-4" />
+                        Code
+                      </span>
+                    )}
                     {project.demo && project.demo !== '#' && (
                       <a
                         href={project.demo}
@@ -78,7 +88,7 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <h3 className="type-h4">{project.title}</h3>
                 <p className="type-body mt-2 text-foreground-muted">{project.desc}</p>
                 <div className="mt-4 flex flex-wrap gap-2">

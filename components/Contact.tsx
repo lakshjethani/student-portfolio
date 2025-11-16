@@ -35,7 +35,7 @@ export default function Contact() {
   ].filter(Boolean) as { label: string; href: string; icon: React.ReactNode; external?: boolean }[]
 
   return (
-    <section id="contact" className="section section-surface">
+    <section id="contact" className="section section-surface cv-auto">
       <div className="section-narrow">
         <motion.h2
           variants={fadeUp}

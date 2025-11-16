@@ -49,7 +49,7 @@ export default function Timeline({ items, showLogo = false, variant = 'default' 
           <li key={`${item.title}-${idx}`} className="relative md:ml-10">
             <motion.div
               variants={fadeUp}
-              className="card-elevate p-6 transition-all duration-300"
+              className="card-elevate p-5 sm:p-6 transition-all duration-300"
               whileHover={{ y: -1, scale: 1.01 }}
             >
               {/* Timeline dot */}

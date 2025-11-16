@@ -61,7 +61,7 @@ export default function Experience() {
   })
 
   return (
-    <section id="experience" className="section section-surface">
+    <section id="experience" className="section section-surface cv-auto">
       <div className="section-narrow">
         <motion.h2
           variants={fadeUp}

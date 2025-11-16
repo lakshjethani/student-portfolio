@@ -7,7 +7,8 @@ const nextConfig = {
       { protocol: 'https', hostname: 'picsum.photos' },
       { protocol: 'https', hostname: 'avatars.githubusercontent.com' },
       { protocol: 'https', hostname: 'logo.clearbit.com' }
-    ]
+    ],
+    formats: ['image/avif', 'image/webp']
   },
   // Avoid eval()-based sourcemaps in dev which can trip some extensions
   webpack: (config, { dev }) => {

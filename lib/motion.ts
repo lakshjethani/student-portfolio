@@ -103,13 +103,14 @@ export const hoverLift = {
 // Viewport animation config
 export const viewportConfig = {
   once: true,
-  margin: '-100px',
-  amount: 0.3,
+  // More permissive for small screens so sections animate into view reliably
+  margin: '0px',
+  amount: 0.15,
 }
 
 // Quick viewport config (less strict)
 export const viewportConfigLoose = {
   once: true,
-  margin: '-50px',
-  amount: 0.2,
+  margin: '0px',
+  amount: 0.1,
 }

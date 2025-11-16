@@ -21,7 +21,7 @@ export default function Education() {
   })
 
   return (
-    <section id="education" className="section section-surface">
+    <section id="education" className="section section-surface cv-auto">
       <div className="section-narrow">
         <motion.h2
           variants={fadeUp}
