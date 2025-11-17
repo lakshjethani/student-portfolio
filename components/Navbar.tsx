@@ -83,7 +83,7 @@ export default function Navbar() {
           aria-label="Go to home"
         >
           <span className="text-primary">{SITE_OWNER.name.split(' ')[0]}</span>{' '}
-          <span className="text-foreground-muted">Portfolio</span>
+          <span className="text-foreground-muted">{SITE_OWNER.name.split(' ')[1]}</span>
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
